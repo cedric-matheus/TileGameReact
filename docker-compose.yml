@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  reactjs:
+    image: node:lts
+    ports:
+      - ${PORT}:${PORT}
