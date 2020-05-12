@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './Styles/global.scss';
 import { Player } from './Core/Entities/Player';
 import ChangePosition from './Core/Systems/ChangePosition';
 import GridContainer from './Containers/GridContainer/GridContainer';

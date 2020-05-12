@@ -1,0 +1,18 @@
+@import 'CurrentTheme.scss';
+
+body {
+  font-family: $font-familu-default;
+  background-color: $background-color;
+  font-size: $font-size-default;
+  color: $text-default-color;
+  background-image: url('/assets/' + $url + '/floor_global.png');
+  background-size: $size-global-background;
+}
+
+.invertX {
+  transform: scaleX(-1);
+}
+
+.invertY {
+  transform: scaleY(-1);
+}
