@@ -1,0 +1,8 @@
+@import "../../Styles/CurrentTheme.scss";
+
+.GridContainer{
+  @extend %fullsize;
+  &__row{
+    @include alignComps();
+  }
+}

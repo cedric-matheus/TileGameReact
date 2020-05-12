@@ -1,0 +1,16 @@
+@import "../../Styles/CurrentTheme.scss";
+.BlockingComponent{
+  @extend %fullsize;
+  @extend %backgroundRules;
+  background-image: url("/assets/cyberpunk/block0.png");
+}
+
+.BlockingComponent--type0{
+  filter:$filter0;
+}
+.BlockingComponent--type1{
+  filter: $filter1;
+}
+.BlockingComponent--type2{
+  filter: $filter2;
+}

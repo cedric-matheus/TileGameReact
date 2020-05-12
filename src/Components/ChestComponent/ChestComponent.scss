@@ -1,0 +1,20 @@
+@import "../../Styles/CurrentTheme.scss";
+
+.ChestComponent{
+  @extend %fullsize;
+  @extend %backgroundRules;
+}
+.ChestComponent--type0{
+  @include spriteFilter("chest0.png",$filter0);
+}
+.ChestComponent--type1{
+  @include spriteFilter("chest0.png",$filter3);
+}
+.ChestComponent--type2{
+  @include spriteFilter("chest1.png",$filter0);
+}
+.ChestComponent--type3{
+  @include spriteFilter("chest1.png",$filter3);
+}
+
+

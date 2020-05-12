@@ -1,0 +1,12 @@
+@import "./Styles/CurrentTheme.scss";
+
+body{
+  font-family: $font-familu-default;
+  background-color: $background-color;
+  font-size: $font-size-default;
+  color: $text-default-color;
+}
+
+.invertX{
+  transform: scaleX(-1);
+}

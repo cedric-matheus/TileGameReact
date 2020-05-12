@@ -1,0 +1,11 @@
+//Imagem com filtro de imagem
+@mixin spriteFilter($image,$filter){
+  background-image: url("/assets/"+$url+"/"+$image+"");
+  filter: $filter;
+}
+
+@mixin alignComps($horizontal:"center", $vertical:"center"){
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
