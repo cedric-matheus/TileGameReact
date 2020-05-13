@@ -7,6 +7,7 @@ import GridContainer from './Containers/GridContainer/GridContainer';
 export default function App() {
   return (
     <React.Fragment>
+      <div className='border'></div>
       <GridContainer />
 
       <div onClick={() => (Player = ChangePosition(Player, 5, 0))}>
