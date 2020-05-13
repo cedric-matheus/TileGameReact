@@ -1,0 +1,7 @@
+@import '../../Styles/CurrentTheme.scss';
+
+.BorderComponent {
+  @extend %fullsize;
+  @extend %fixedLayer;
+  box-shadow: $inner-shadow;
+}
