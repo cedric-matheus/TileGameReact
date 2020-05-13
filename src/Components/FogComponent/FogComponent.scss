@@ -1,0 +1,50 @@
+@import '../../Styles/CurrentTheme.scss';
+
+.FogComponent {
+  @extend %fullsize;
+  @extend %fixedLayer;
+  position: absolute;
+  height: 220%;
+  z-index: 100;
+  overflow: hidden;
+
+  .flare {
+    width: 100vw;
+    height: 100vh;
+    @extend %fixedLayer;
+    overflow: hidden;
+    pointer-events: none;
+    filter: blur(2px);
+    opacity: 0.4;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 300%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: repeat-x;
+    }
+    &:before {
+      background-image: url('https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png');
+      animation: animationFog 60s linear 0s infinite;
+    }
+    &:after {
+      background-image: url('https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png');
+      animation: animationFog 25s linear 0s infinite;
+    }
+
+    @keyframes animationFog {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        transform: translate3d(-200vw, 0, 0);
+      }
+    }
+  }
+}
