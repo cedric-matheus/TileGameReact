@@ -1,27 +1,79 @@
 // CORE SYSTEMS
-import { getRandomIntegerNumber, getRandomBooleanValue } from './RandomSystem';
+import {
+  getRandomIntegerNumber,
+  getRandomBooleanValue,
+  getRandomValueFromArray,
+} from './RandomSystem';
 
 // CORE COMPONENTS
-import CellComponent from '../Components/Cell';
+import BlockingCellComponent from '../Components/BlockingCell';
+import ChestCellComponent from '../Components/ChestCell';
 
 // JSDOC TYPEDEFS
-import '../Components/Cell/typedef';
+import '../Components/BlockingCell/typedef';
+import '../Components/ChestCell/typedef';
 
 /**
- * Esse sistema é responsável por criar uma célula (CellComponent) randômica.
+ * Cria uma celula do tipo bau (ChestCellComponent) aleatória.
  *
- * @returns {CellComponent} Célula gerada randômicamente.
+ * @returns {ChestCellComponent} Celula do tipo baú aleatória.
  */
-export function createCell() {
-  const randomCell = { ...CellComponent };
+export function createChestCell() {
+  const randomChestCell = { ...ChestCellComponent };
 
-  const type = getRandomIntegerNumber(3);
   const life = getRandomIntegerNumber(5);
+  const type = getRandomIntegerNumber(3);
+  const loot = getRandomIntegerNumber(100);
+  const isLocked = getRandomBooleanValue();
   const isInverted = getRandomBooleanValue();
 
-  randomCell.type = type;
-  randomCell.life = life;
-  randomCell.isInverted = isInverted;
+  randomChestCell.life = life;
+  randomChestCell.type = type;
+  randomChestCell.loot = loot;
+  randomChestCell.isLocked = isLocked;
+  randomChestCell.isInverted = isInverted;
 
-  return randomCell;
+  return randomChestCell;
+}
+
+/**
+ * Esse sistema é responsável por criar uma célula de obstáculo
+ * (BlockingCellComponent) randômica.
+ *
+ * @returns {BlockingCellComponent} Célula gerada randômicamente.
+ */
+export function createBlockingCell() {
+  const randomBlockingCell = { ...BlockingCellComponent };
+
+  const life = getRandomIntegerNumber(5);
+  const type = getRandomIntegerNumber(3);
+  const isInverted = getRandomBooleanValue();
+
+  randomBlockingCell.life = life;
+  randomBlockingCell.type = type;
+  randomBlockingCell.isInverted = isInverted;
+
+  return randomBlockingCell;
+}
+
+/**
+ * Cria uma célula aleatória de baú ou de obstáculo
+ *
+ * @returns {{
+ *  cellType: ('Chest' | 'Blocking' | ''),
+ *  cell: (ChestCellComponent | BlockingCellComponent | '')
+ * }} Tipo da célula e célula.
+ */
+export function createRandomCell() {
+  const cells = {
+    Chest: () => createChestCell(),
+    Blocking: () => createBlockingCell(),
+    '': () => '',
+  };
+
+  const possibleCellTypes = ['Chest', 'Blocking', '', '', ''];
+
+  const selectedCellType = getRandomValueFromArray(possibleCellTypes);
+
+  return { cellType: selectedCellType, cell: cells[selectedCellType]() };
 }
