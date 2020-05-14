@@ -1,5 +1,5 @@
 // CORE SYSTEMS
-import { createCell } from './CellSystems';
+import { createRandomCell } from './CellSystems';
 
 // CORE COMPONENTS
 import MapComponent from '../Components/Map';
@@ -19,21 +19,25 @@ import '../Components/Map/typedef';
 export function createMap(width, height) {
   const randomMap = { ...MapComponent };
 
+  const newMapMatrix = [];
+
   // gerando linhas do mapa
   for (let row = 0; row < height; row++) {
     const mapRow = [];
 
     // gerando colunas da linha
     for (let column = 0; column < width; column++) {
-      const rowColumn = createCell();
+      const rowColumn = createRandomCell();
 
       // adicionando coluna a linha
       mapRow.push(rowColumn);
     }
 
     // adicionando linha ao mapa (matriz)
-    randomMap.mapMatrix.push(mapRow);
+    newMapMatrix.push(mapRow);
   }
+
+  randomMap.mapMatrix = newMapMatrix;
 
   return randomMap;
 }
