@@ -12,7 +12,7 @@ import FogComponent from './Components/FogComponent/FogComponent';
 export default function App() {
   return (
     <React.Fragment>
-      <FogComponent />
+      {/* <FogComponent /> */}
       <GridContainer />
       <BorderComponent />
     </React.Fragment>
