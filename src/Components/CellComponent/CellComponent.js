@@ -1,9 +1,14 @@
 import React from 'react';
+
+// CSS
 import '../CellComponent/CellComponent.scss';
 
+// REACT COMPONENTS
 import BlockingComponent from '../BlockingComponent/BlockingComponent';
 import ChestComponent from '../ChestComponent/ChestComponent';
-import { getRandomInt } from '../../Core/Systems/RandomTool';
+
+// CORE SYSTEMS
+import { getRandomIntegerNumber } from '../../Core/Systems/RandomSystem';
 
 /**
  * @Name: Sou uma celula
@@ -13,11 +18,11 @@ import { getRandomInt } from '../../Core/Systems/RandomTool';
  */
 
 const CellComponent = () => {
-  const randonNumber = getRandomInt(4);
+  const randonNumber = getRandomIntegerNumber(4);
 
   return (
     <React.Fragment>
-      <div className="CellComponent">
+      <div className='CellComponent'>
         {(() => {
           switch (randonNumber) {
             case 0:

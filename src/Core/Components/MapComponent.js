@@ -3,7 +3,8 @@
  *
  * Esse componente é responsável por representar um mapa (matriz)
  *
- * @property {*[]} mapMatrix=[] - Matriz representativa do mapa
+ * @typedef {object} Map
+ * @property {Array} mapMatrix=`[]` - Matriz representativa do mapa
  */
 const Map = { mapMatrix: [] };
 

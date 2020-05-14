@@ -1,7 +1,13 @@
 import React from 'react';
+
+// CSS
 import '../BlockingComponent/BlockingComponent.scss';
-import { boleanValue } from '../../Core/Systems/RandomTool';
-import { getRandomInt } from '../../Core/Systems/RandomTool';
+
+// SISTEMAS (SYSTEMS)
+import {
+  getRandomBooleanValue,
+  getRandomIntegerNumber,
+} from '../../Core/Systems/RandomSystem';
 
 /** 
   * @Name: Bloco obstaculo Padrão
@@ -13,14 +19,15 @@ import { getRandomInt } from '../../Core/Systems/RandomTool';
 
 const BlockingComponent = ({
   life = 1,
-  type = getRandomInt(3),
-  invert = boleanValue(),
+  type = getRandomIntegerNumber(3),
+  invert = getRandomBooleanValue(),
 }) => {
   return (
     <React.Fragment>
       <div
-        className={`BlockingComponent BlockingComponent--type${type} ${invert &&
-          'invertX'}`}
+        className={`BlockingComponent BlockingComponent--type${type} ${
+          invert && 'invertX'
+        }`}
       />
     </React.Fragment>
   );

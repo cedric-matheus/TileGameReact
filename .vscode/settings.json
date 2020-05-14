@@ -25,5 +25,16 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": true,
-  "recommendations": []
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "dracula-theme.theme-dracula",
+    "pkief.material-icon-theme",
+    "mikestead.dotenv",
+    "ms-vsliveshare.vsliveshare",
+    "mgmcdermott.vscode-language-babel",
+    "ludorival.preview-jsdoc",
+    "bierner.jsdoc-markdown-highlighting",
+    "aueangpanit.jsdoc-proptypes"
+  ]
 }

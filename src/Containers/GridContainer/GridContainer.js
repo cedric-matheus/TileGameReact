@@ -13,8 +13,8 @@ import CellComponent from '../../Components/CellComponent/CellComponent';
 const GridContainer = (qtdColumn, qtdRow) => {
   return (
     <React.Fragment>
-      <div className="GridContainer">
-        <div className="GridContainer__row">
+      <div className='GridContainer'>
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -25,7 +25,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -36,7 +36,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -47,7 +47,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -58,7 +58,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -69,7 +69,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -80,7 +80,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />
@@ -91,7 +91,7 @@ const GridContainer = (qtdColumn, qtdRow) => {
           <CellComponent />
           <CellComponent />
         </div>
-        <div className="GridContainer__row">
+        <div className='GridContainer__row'>
           <CellComponent />
           <CellComponent />
           <CellComponent />

@@ -1,7 +1,13 @@
 import React from 'react';
+
+// CSS
 import '../ChestComponent/ChestComponent.scss';
-import { boleanValue } from '../../Core/Systems/RandomTool';
-import { getRandomInt } from '../../Core/Systems/RandomTool';
+
+// CORE SYSTEMS
+import {
+  getRandomBooleanValue,
+  getRandomIntegerNumber,
+} from '../../Core/Systems/RandomSystem';
 
 /**
  * @Name: Bloco Baú
@@ -20,8 +26,9 @@ const ChestComponent = ({
   return (
     <React.Fragment>
       <div
-        className={`ChestComponent ChestComponent--type${type} ${invert &&
-          'invertX'}`}
+        className={`ChestComponent ChestComponent--type${type} ${
+          invert && 'invertX'
+        }`}
       />
     </React.Fragment>
   );
