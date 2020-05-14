@@ -18,10 +18,10 @@ import {
 
 const ChestComponent = ({
   life = 10,
-  type = getRandomInt(4),
+  type = getRandomIntegerNumber(4),
   loot = 100,
   locked,
-  invert = boleanValue(),
+  invert = getRandomBooleanValue(),
 }) => {
   return (
     <React.Fragment>
