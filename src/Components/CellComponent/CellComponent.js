@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // CSS
 import '../CellComponent/CellComponent.scss';
@@ -7,37 +8,32 @@ import '../CellComponent/CellComponent.scss';
 import BlockingComponent from '../BlockingComponent/BlockingComponent';
 import ChestComponent from '../ChestComponent/ChestComponent';
 
-// CORE SYSTEMS
-import { getRandomIntegerNumber } from '../../Core/Systems/RandomSystem';
-
 /**
- * @Name: Sou uma celula
- * @Desc: Eu sorteio de defino um component
- * @props:
+ * Componente de Célula
  *
+ * Pode ser renderizado em baú, obstáculo e vazia.
+ *
+ * @param {string} cellType Tipo de célula
+ *
+ * @returns {React.Component} Componente Célula
  */
-
-const CellComponent = () => {
-  const randonNumber = getRandomIntegerNumber(4);
+const CellComponent = ({ cellType, ...props }) => {
+  const cellComponents = {
+    Chest: <ChestComponent {...props} />,
+    Blocking: <BlockingComponent {...props} />,
+    '': '',
+  };
 
   return (
     <React.Fragment>
-      <div className='CellComponent'>
-        {(() => {
-          switch (randonNumber) {
-            case 0:
-              return '';
-            case 1:
-              return <ChestComponent />;
-            case 2:
-              return <BlockingComponent />;
-            default:
-              return '';
-          }
-        })()}
-      </div>
+      <div className='CellComponent'>{cellComponents[cellType]}</div>
     </React.Fragment>
   );
+};
+
+// PROP TYPES
+CellComponent.propTypes = {
+  cellType: PropTypes.string.isRequired,
 };
 
 export default CellComponent;

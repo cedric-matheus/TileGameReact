@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // CSS
 import '../BlockingComponent/BlockingComponent.scss';
@@ -9,28 +10,42 @@ import {
   getRandomIntegerNumber,
 } from '../../Core/Systems/RandomSystem';
 
-/** 
-  * @Name: Bloco obstaculo Padrão
-  * @Desc: O bloco default que pode ser destruido pelo jogador comforme vida
-  * @props: life = vida do objeto, type= estilo de visualização
-  *     
-
-  */
-
-const BlockingComponent = ({
-  life = 1,
-  type = getRandomIntegerNumber(3),
-  invert = getRandomBooleanValue(),
-}) => {
+/**
+ * Componente de bloco de obstáculo padrão.
+ *
+ * Um bloco que possui uma quantidade de vida e pode ser destruído pelo jogador.
+ *
+ * @param {object} props Props do componente
+ * @param {number} props.life Vida do bloco
+ * @param {number} props.type Estilo de visualização
+ * @param {boolean} props.isInverted Está invertido?
+ *
+ * @returns {React.Component} Component de bloco de obstáculo.
+ */
+const BlockingComponent = ({ life, type, isInverted }) => {
   return (
     <React.Fragment>
       <div
         className={`BlockingComponent BlockingComponent--type${type} ${
-          invert && 'invertX'
+          isInverted ? 'invertX' : ''
         }`}
       />
     </React.Fragment>
   );
+};
+
+// PROP TYPES
+BlockingComponent.propTypes = {
+  life: PropTypes.number,
+  type: PropTypes.number,
+  isInverted: PropTypes.bool,
+};
+
+// DEFAULT PROPS
+BlockingComponent.defaultProps = {
+  life: 1,
+  type: getRandomIntegerNumber(3),
+  isInverted: getRandomBooleanValue(),
 };
 
 export default BlockingComponent;

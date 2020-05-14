@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // CSS
 import '../ChestComponent/ChestComponent.scss';
@@ -10,28 +11,46 @@ import {
 } from '../../Core/Systems/RandomSystem';
 
 /**
- * @Name: Bloco Baú
- * @Desc: O Baú é um obstaculo com premio interno
- * @props: life = vida do objeto, type= estilo de visualização, loot= valor dentro do baú
+ * Bloco de báu (ChestComponent)
  *
+ * O baú é um obstáculo com um prêmio interno
+ *
+ * @param {object} props Props do componente
+ * @param {number} props.life Vida do baú
+ * @param {number} props.type Estilo do baú
+ * @param {number} props.loot Valor dentro do baú
+ * @param {boolean} props.isLocked Está fechado?
+ * @param {boolean} props.isInverted É invertido?
+ * @returns {React.Component} Componente Bloco de Baú (ChestComponent)
  */
-
-const ChestComponent = ({
-  life = 10,
-  type = getRandomIntegerNumber(4),
-  loot = 100,
-  locked,
-  invert = getRandomBooleanValue(),
-}) => {
+const ChestComponent = ({ life, type, loot, isLocked, isInverted }) => {
   return (
     <React.Fragment>
       <div
         className={`ChestComponent ChestComponent--type${type} ${
-          invert && 'invertX'
+          isInverted && 'invertX'
         }`}
       />
     </React.Fragment>
   );
+};
+
+// PROP TYPES
+ChestComponent.propTypes = {
+  life: PropTypes.number,
+  type: PropTypes.number,
+  loot: PropTypes.number,
+  isLocked: PropTypes.bool,
+  isInverted: PropTypes.bool,
+};
+
+// DEFAULT PROPS
+ChestComponent.defaultProps = {
+  life: 10,
+  type: getRandomIntegerNumber(4),
+  loot: 100,
+  isLocked: getRandomBooleanValue(),
+  isInverted: getRandomBooleanValue(),
 };
 
 export default ChestComponent;
