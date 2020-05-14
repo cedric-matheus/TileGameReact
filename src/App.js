@@ -5,7 +5,9 @@ import BorderComponent from './Components/BorderComponent/BorderComponent';
 import FogComponent from './Components/FogComponent/FogComponent';
 
 /**
+ * Componente principal da aplicação
  *
+ * @returns {React.Component} Componente principal da aplicação
  */
 export default function App() {
   return (
