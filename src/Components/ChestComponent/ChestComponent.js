@@ -31,8 +31,10 @@ const ChestComponent = ({ life, type, loot, isLocked, isInverted }) => {
           isInverted && 'invertX'
         }`}
       >
-        <div> tipo= {type}</div>
-        <div> invertido = {isInverted}</div>
+        <div className={isInverted && 'invertX'}>
+          <div> tipo= {type}</div>
+          <div>{isInverted ? 'Invertido' : 'Não Invertido'}</div>
+        </div>
       </div>
     </React.Fragment>
   );
